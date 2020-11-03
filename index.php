@@ -21,19 +21,13 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="slider-nav">
-                                <a href="#" class="single-slider-nav">
+                                <a href="pool.php" class="single-slider-nav">
                                     <img src="img/nav-1.jpg" alt="">
                                     <div class="nav-text active">
                                         <p>Pool<i class="lnr lnr-arrow-right"></i></p>
                                     </div>
                                 </a>
-                                <a href="#" class="single-slider-nav">
-                                    <img src="img/nav-2.jpg" alt="">
-                                    <div class="nav-text">
-                                        <p>Sauna<i class="lnr lnr-arrow-right"></i></p>
-                                    </div>
-                                </a>
-                                <a href="#" class="single-slider-nav last">
+                                <a href="rest.php" class="single-slider-nav last">
                                     <img src="img/nav-3.jpg" alt="">
                                     <div class="nav-text">
                                         <p>Restaurant<i class="lnr lnr-arrow-right"></i></p>
