@@ -1,3 +1,11 @@
+
+<?php 
+
+ include('connection.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,6 +16,7 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    
   </head>
   <body>
 <!-- Header Section Begin -->
@@ -36,65 +45,99 @@
     </header>
     <!-- Header End -->
 
-    <div class="wrapper" style="padding-top:110px;">
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>AdminPanel</h3>
-        </div>
 
-        <ul class="list-unstyled components">
-            <li><a href="dashboard.php?">Update Password</a></li>
-            <li><a href="dashboard.php?">Feedback</a></li>
-            <li><a href="dashboard.php?">Room</a></li>
-            <li><a href="dashboard.php?">Booking Details</a></li>
-            <li><a href="dashboard.php?">User Registration</a></li>
-            <li><a href="dashboard.php?">Slider</a></li>
-            <li><a href="#">Payment</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setting <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Logo Update</a></li>
-                    <li><a href="#">Address Update</a></li>
+    <div class="container" style="padding-top: 90px;">
+
+
+        <div class="row content mt-5">
+
+            <div class="col-sm-3 sidenav">
+
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>AdminPanel</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+
+                    <li><a href="dashboard.php?option=feedback">Feedback</a></li>
+                    <li><a href="dashboard.php?option=room">Room</a></li>
+                    <li><a href="dashboard.php?option=booking_details">Booking Details</a></li>
+                    <li><a href="dashboard.php?option=user_registration">Users</a></li>
+                    <li><a href="dashboard.php?option=room_type">Room Type</a></li>
+                    <li><a href="dashboard.php?option=dimension">Dimension</a></li>
+
                 </ul>
-            </li>
-        </ul>
-    </nav>
-    <?php 
-@$opt=$_GET['option'];
-if($opt=="")
-{
-include('reports.php');	
-}
-// else
-// {
-// 	if($opt=="feedback")
-// 	{
-// 	include('feedback.php');	
-// 	}
-// 	else if($opt=="slider")
-// 	{
-// 	include('slider.php');	
-// 	}
-// 	else if($opt=="update_slider")
-// 	{
-// 	include('update_slider.php');	
-// 	}
-// 	else if($opt=="add_slider")
-// 	{
-// 	include('add_slider.php');	
-// 	}
-// 	else if($opt=="update_password")
-// 	{
-// 	include('update_password.php');	
-// 	}
-// 	else if($opt=="update_rooms")
-// 	{
-// 	include('update_rooms.php');	
-// 	}
-//}
-?>
-    </div>
+            </nav>
+
+            </div>
+
+            <div class="col-sm-9 text-left ">
+            <?php 
+                @$opt=$_GET['option'];
+                if($opt=="")
+                {
+                include('reports.php');	
+                }
+                else
+                {
+                    if($opt=="feedback")
+                    {
+                    include('feedback.php');	
+                    }
+                    else if($opt=="room")
+                    {
+                    include('room.php');	
+                    }
+                    else if($opt=="booking_details")
+                    {
+                    include('booking_details.php');	
+                    }
+                    else if($opt=="user_registration")
+                    {
+                    include('user_registration.php');	
+                    }
+                    else if($opt=="add_rooms")
+                    {
+                    include('add_rooms.php');	
+                    }
+                    else if($opt=="room_type")
+                    {
+                    include('room_type.php');	
+                    }
+                    else if($opt=="add_room_type")
+                    {
+                    include('add_room_type.php');	
+                    }
+                    else if($opt=="dimension")
+                    {
+                    include('dimension.php');	
+                    }
+                    else if($opt=="add_dimension")
+                    {
+                    include('add_dimension.php');	
+                    }
+                    else if($opt=="update_dimension")
+                    {
+                    include('update_dimension.php');	
+                    }
+                    else if($opt=="update_room_type")
+                    {
+                    include('update_room_type.php');	
+                    }
+                    else if($opt=="update_room")
+                    {
+                    include('update_room.php');	
+                    }
+                }
+                ?>
+
+
+            </div>
+        </div>
+    </div>       
+
+    
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->

@@ -37,38 +37,61 @@
 
       <div class="container">
         <div class="row justify-content-center text-center mb-5">
-          <div class="col-md-7">
           
-          <div class="col-lg-10 offset-lg-1">
+          
+          <div class="col-lg-10 offset-lg-1 mb-3">
                         <h2 style="font-size: 48px;">Photos</h2>
                         <p data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
             </div>
         
-            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-           <!--begin carousel-->
-           <div id="myGallery" class="carousel slide" data-interval="false">
-            <div class="carousel-inner">
-            <div class="item active"> <img src="img/pool/slider_1.jpg" alt="item0"></div>
-            
-           
-            <div class="item"> <img src="img/pool/slider_2.jpg" alt="item1"></div>
-            
-            
-            <div class="item"> <img src="img/pool/slider_3.jpg" alt="item2"></div>
-            
-            <div class="item"> <img src="img/pool/slider_4.jpg" alt="item3"></div>
-           
-            <!--end carousel-inner--></div>
-            <!--Begin Previous and Next buttons-->
-            <a class="left carousel-control" href="#myGallery" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myGallery" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span></a>
-            <!--end carousel--></div>
-
-            <!-- END slider -->
-          </div>
+        
+          <div class="col-lg-10 offset-lg-1">
+               <!--Carousel Wrapper-->
+               <div id="carousel-example-1z" class="carousel slide ml-auto mr-auto" data-ride="carousel" style="max-width: 90%;">
+                    <!--Indicators-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+                    </ol>
+                    <!--/.Indicators-->
+                    <!--Slides-->
+                    <div class="carousel-inner" role="listbox">
+                        <!--First slide-->
+                        <div class="carousel-item active" style="max-height: 700px;">
+                            <img class="d-block h-70" src="img/pool/slider_1.jpg"
+                                 alt="First slide" th:src="@{img/phones.jpg}">
+                            <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 0, 0, 0.7); border-radius: 20px;">
+                                <h5 >Welcome to your dream</h5>
+                            </div>
+                        </div>
+                        <!--/First slide-->
+                        <!--Second slide-->
+                        <div class="carousel-item" style="max-height: 700px;">
+                            <img class="d-block h-70" src="img/pool/slider_2.jpg"
+                                 alt="Second slide" th:src="@{img/cheap_phone.jpg}">
+                        </div>
+                        <!--/Second slide-->
+                        <!--Third slide-->
+                        <div class="carousel-item" style="max-height: 700px;">
+                            <img class="d-block  h-70" src="img/pool/slider_3.jpg"
+                                 alt="Third slide" th:src="@{img/telev.jpg}">
+                        </div>
+                        <!--/Third slide-->
+                    </div>
+                    <!--/.Slides-->
+                    <!--Controls-->
+                    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <!--/.Controls-->
+                </div>
+                <!--/.Carousel Wrapper-->
 
 
           <div class="about-room my-5">
