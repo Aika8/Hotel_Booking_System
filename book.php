@@ -1,3 +1,14 @@
+
+<?php
+
+session_start();
+if(!isset($_SESSION['userId'])){
+    header("Location: index.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -8,6 +19,7 @@
 
 <body>
 <?php include_once('header.php'); ?>
+
 
  <!-- Room Availability Section Begin -->
  <section class="room-availability" style="padding-top: 200px;">
@@ -29,10 +41,10 @@
                             </div>
                             <div class="room-text">
                                 <div class="room-title">
-                                    <h2><?php echo $_POST['title']?></h2>
+                                    <h2><?php echo $_GET['title']?></h2>
                                     <div class="room-price">
                                         <span>From</span>
-                                        <h2><?php echo $_POST['price']?></h2>
+                                        <h2><?php echo $_GET['price']?></h2>
                                     </div>
                                 </div>
                                 <div class="room-features">

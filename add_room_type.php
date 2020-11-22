@@ -9,7 +9,7 @@ if(isset($add))
 	}		
 	else
 	{	
-	mysqli_query($con,"insert into room_type values('','$name','$description')");	
+	mysqli_query($con,"insert into room_type values('','$name','$description', '$price')");	
 
 	}
 }
@@ -31,7 +31,11 @@ if(isset($add))
 		<td><input type="text" name="description"  class="form-control"/>
 		</td>
 	</tr>
-	
+	<tr>	
+		<th>Price</th>
+		<td><input type="number" name="price"  class="form-control"/>
+		</td>
+	</tr>
 	
 	<tr>
 		<td colspan="2">

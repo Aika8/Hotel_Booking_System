@@ -1,5 +1,30 @@
+<?php
+
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+
+	
+    $query = "SELECT * FROM guest WHERE CONCAT(id, first_name, last_name) LIKE '%".$valueToSearch."%'";
+    $search_result =  mysqli_query($con, $query);
+    
+}
+ else {
+    $query = "SELECT * FROM guest";
+    $search_result = mysqli_query($con, $query);
+}
+
+
+?>
+
+
+<form action="" method="post">
+            <input type="text" name="valueToSearch" placeholder="Value To Search">
+            <input class = "btn btn-dark" type="submit" name="search" value="Filter">
+</form>
+
 <table class="table table-bordered table-striped table-hover">
-	<h1>Users</h1><hr>
+	<h1 class="mt-4" >Users</h1><hr>
 	<tr>
 		<th>Sr No</th>
 		<th>First Name</th>
@@ -10,8 +35,8 @@
 	</tr>
 	<?php 
 
-$sql=mysqli_query($con,"select * from guest");
-while($res=mysqli_fetch_assoc($sql))
+
+while($res = mysqli_fetch_array($search_result))
 {
 ?>
 <tr>

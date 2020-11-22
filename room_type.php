@@ -27,12 +27,14 @@ while($res=mysqli_fetch_assoc($sql))
 $id=$res['id'];	
 $name = $res['name'];
 $description = $res['description'];
+$price = $res['price'];
 
 ?>
 <tr>
 		<td><?php echo $id ?></td>
 		<td><?php echo $name ?></td>
 		<td><?php echo $description  ?></td>
+		<td><?php echo $price ?></td>
 
 		<td><a href="dashboard.php?option=update_room_type&id=<?php echo $id; ?>"><span class="	fas fa-pen"></span></a></td>
  

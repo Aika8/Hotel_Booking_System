@@ -7,7 +7,7 @@ $res=mysqli_fetch_assoc($sql);
 extract($_REQUEST);
 if(isset($update))
 {
-mysqli_query($con,"update room_type set name='$name', description='$description' where id='$id' ");
+mysqli_query($con,"update room_type set name='$name', description='$description', price='$price' where id='$id' ");
 header('location:dashboard.php?option=room_type');
 }
 
@@ -25,6 +25,12 @@ header('location:dashboard.php?option=room_type');
 	<tr>	
 		<th>Description</th>
 		<td><textarea  name="description" value="<?php echo $res['description']; ?>"  class="form-control"><?php echo $res['description']; ?></textarea>
+		</td>
+	</tr>
+
+	<tr>	
+		<th>Price</th>
+		<td><textarea  name="price" value="<?php echo $res['price']; ?>"  class="form-control"><?php echo $res['price']; ?></textarea>
 		</td>
 	</tr>
 	
