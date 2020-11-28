@@ -6,6 +6,7 @@ if(!isset($_SESSION['userId'])){
     header("Location: index.php");
 }
 
+
 ?>
 
 
@@ -19,6 +20,103 @@ if(!isset($_SESSION['userId'])){
 
 <body>
 <?php include_once('header.php'); ?>
+
+<?php
+
+if(isset($_POST['availability'])){
+
+   
+
+    if(isset($_POST['inDate']) and isset($_POST['outDate'])  ){
+   
+        $inDate = date( "Y-m-d", strtotime($_POST['inDate'])); 
+        $outDate = date( "Y-m-d", strtotime($_POST['outDate']));
+        $people_id = $_POST['people'];
+        $type_id = $_POST['type'];
+
+        
+     
+
+
+        if($inDate > $outDate or $inDate < date('Y-m-d')){
+            $modal_message = "Invalid input!";
+            $show_modal = true;
+        }
+        else{
+
+
+        $flag = false;   
+        $sql=mysqli_query($con,"select * from room where room_type_id ='$type_id' and dimension_id = '$people_id'");
+        while($res=mysqli_fetch_assoc($sql)){
+            $flag = false;
+            $room_id=$res['id'];
+            $sql_reg = mysqli_query($con,"select * from reservation where room_id= '$room_id'");
+            while($res_reg=mysqli_fetch_assoc($sql_reg)){
+
+                if(!($inDate >= $res_reg['date_out'] or $res_reg['date_in'] >= $outDate)){
+                        $flag = true;
+                }
+            }
+
+            if(!$flag){
+                $guest_id = $_SESSION['userId'];
+                mysqli_query($con,"insert into reservation values('','$inDate','$outDate', '$guest_id', '$room_id')");
+                $modal_message = "Your reservation went successfully! Cannot wait to see you here!";
+                $show_modal = true;
+            }
+        }
+
+        if($flag){
+            $modal_message = "This dates already taken! Please choose another one!";
+            $show_modal = true;
+        }
+
+        }
+}
+else{
+    echo $modal_message;
+    echo "asjeb";
+    $modal_message = "Not valid input! Date does not send! ";
+    $show_modal = true;
+}
+
+}
+
+
+
+?>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="secondModal" style="background-color: ">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p><?php echo $modal_message?></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<?php if($show_modal):?>
+          <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery("#secondModal").modal("show");
+        });
+        </script>
+<?php endif;?>
+
+
+
+
 
 
  <!-- Room Availability Section Begin -->
@@ -75,43 +173,59 @@ if(!isset($_SESSION['userId'])){
                     <div class="col-lg-6">
                         <div class="check-form">
                             <h2>Check Availability</h2>
-                            <form action="#">
+                            <form action="" method="post">
                                 <div class="datepicker">
                                     <div class="date-select">
                                         <p>From</p>
-                                        <input type="text" class="datepicker-1" value="dd / mm / yyyy">
-                                        <img src="img/calendar.png" alt="">
+                                        <input type="date"  name="inDate" placeholder="">
+                                        
                                     </div>
                                     <div class="date-select to">
                                         <p>To</p>
-                                        <input type="text" class="datepicker-2" value="dd / mm / yyyy">
-                                        <img src="img/calendar.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="room-quantity">
-                                    <div class="single-quantity">
-                                        <p>Adults</p>
-                                        <div class="pro-qty"><input type="text" value="0"></div>
-                                    </div>
-                                    <div class="single-quantity">
-                                        <p>Children</p>
-                                        <div class="pro-qty"><input type="text" value="0"></div>
-                                    </div>
-                                    <div class="single-quantity last">
-                                        <p>Rooms</p>
-                                        <div class="pro-qty"><input type="text" value="0"></div>
+                                        <input type="date"  name="outDate" placeholder="">
+                                       
                                     </div>
                                 </div>
                                 <div class="room-selector">
-                                    <p>Room</p>
-                                    <select class="suit-select">
-                                        <option>Eg. Master suite</option>
-                                        <option value="">Double Room</option>
-                                        <option value="">Single Room</option>
-                                        <option value="">Special Room</option>
+                                    <p>Adult - Children</p>
+                                    <select class="suit-select" name="people">
+                                <?php 
+
+                                        $sql =mysqli_query($con,"select * from dimension");
+                                        while($res =mysqli_fetch_assoc($sql))
+                                        {
+                                        $id = $res['id'];	
+                                        $adult = $res['adult_available'];
+                                        $children = $res['children_available'];
+                                ?>
+                                              
+                                    <option value="<?php echo $id ?>"><?php echo $adult.' - '. $children ?></option>
+                                    <?php 	
+                                            }
+                                    ?>	
                                     </select>
                                 </div>
-                                <button type="button">CHECK Availability <i class="lnr lnr-arrow-right"></i></button>
+                                    
+                                <div class="room-selector">
+                                    <p>Room</p>
+                                    <select class="suit-select" name="type">
+                                    <?php 
+
+                                        $sql=mysqli_query($con,"select * from room_type");
+                                        while($res=mysqli_fetch_assoc($sql))
+                                        {
+                                        $id=$res['id'];	
+                                        $name = $res['name'];
+
+                                    ?>
+                                      
+                                    <option value="<?php echo $id ?>"><?php echo $name?></option>
+                                        <?php 	
+                                            }
+                                        ?>	
+                                    </select>
+                                </div>
+                                <button type="submit" name="availability">CHECK Availability <i class="lnr lnr-arrow-right"></i></button>
                             </form>
                         </div>
                     </div>

@@ -62,7 +62,7 @@ if(isset($_POST['loginButton'])){
     if($row = mysqli_fetch_array($search_result)){
 
        if(password_verify($password, $row['password'])){
-        $_SESSION['user'] = $row;
+        $_SESSION['user'] = serialize($row);
         $_SESSION['userId'] = $row['id'];
         header('Location: '.$_SERVER['PHP_SELF']);
         die;
@@ -217,6 +217,88 @@ if(isset($_POST['roomButton'])){
             </div>
             </div>
 
+
+            <?php if(isset($_SESSION['user'])):?>
+            <?php $user = unserialize($_SESSION['user']) ?>
+              <div class="modal fade" id="Profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                  <div class="card-container">
+                      <div class="card">
+                          <div class="front">
+                              <div class="cover">
+                                  <img src="https://picsum.photos/200/300"/>
+                              </div>
+                              <div class="user">
+                                  <img class="img-circle" src="https://picsum.photos/200/300"/>
+                              </div>
+                              <div class="content">
+                                  <div class="main">
+                                      <h3 class="name"><?php echo $user['first_name'] ?>, <?php echo $user['last_name'] ?></h3>
+                                      <p class="profession">Member since <?php echo $user['member_since'] ?></p>
+                                      <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                                  </div>
+                                  <div class="footer">
+                                      <i class="fa fa-mail-forward"></i> Auto Rotation
+                                  </div>
+                              </div>
+                          </div> <!-- end front panel -->
+                          <div class="back">
+                              <div class="header">
+                                  <h5 class="motto"><?php echo $user['email'] ?></h5>
+                              </div>
+                              <div class="content">
+                                  <div class="main">
+                                      <h4 class="text-center">Additional Information</h4>
+                                      <p class="text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</p>
+
+                                  </div>
+                              </div>
+                              <div class="footer">
+                                  <div class="social-links text-center">
+                                      <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                      <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                      <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                                  </div>
+                              </div>
+                          </div> <!-- end back panel -->
+                      </div> <!-- end card -->
+                  </div> <!-- end card-container -->
+                  </div>
+                </div>
+              </div>
+
+              <script type="text/javascript">
+                  $().ready(function(){
+                      $('[rel="tooltip"]').tooltip();
+
+                      $('a.scroll-down').click(function(e){
+                          e.preventDefault();
+                          scroll_target = $(this).data('href');
+                          $('html, body').animate({
+                              scrollTop: $(scroll_target).offset().top - 60
+                          }, 1000);
+                      });
+
+                  });
+
+                  function rotateCard(btn){
+                      var $card = $(btn).closest('.card-container');
+                      console.log($card);
+                      if($card.hasClass('hover')){
+                          $card.removeClass('hover');
+                      } else {
+                          $card.addClass('hover');
+                      }
+                  }
+
+
+              </script>
+
+
+            <?php endif;?>
+
+
  <?php if(!isset($_SESSION['user'])):?>
 
             <div class="inner-header">
@@ -270,7 +352,7 @@ if(isset($_POST['roomButton'])){
                                     <li><a href="rooms.php">Rooms</a></li>
                                     <li><a href="news.php">News</a></li>
                                     <li><a href="contact.php">Contact</a></li>
-                                    <li><a href="profile.php">Profile</a></li>
+                                    <li><a data-toggle="modal" data-target="#Profile">Profile</a></li>
                                     <li><a href="logout.php">Logout</a></li>
                                 </ul>
                             </nav>                            
@@ -286,3 +368,7 @@ if(isset($_POST['roomButton'])){
 
 
   <?php  endif; ?>
+
+
+  <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>

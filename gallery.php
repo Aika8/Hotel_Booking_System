@@ -18,6 +18,8 @@
 <body>
 <?php include_once('header.php'); ?>
 
+
+
     <!-- Hero Section Begin -->
     <section class="hero-section set-bg" data-setbg="img/services-bg.jpg">
         <div class="hero-text">
@@ -35,7 +37,7 @@
     <!-- Services Section Begin -->
 
         <!--begin modal window-->
-        <div class="modal fade" id="myModal">
+        <div class="modal fade" id="galleryModal">
         <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
@@ -45,7 +47,7 @@
         <div class="modal-body">
 
         <!--begin carousel-->
-            <div id="myGallery" class="carousel slide" data-interval="false">
+            <div id="myGallery" class="carousel" data-interval="false">
             <div class="carousel-inner">
             <div class="item active"> <img src="img/services/services-1.jpg" alt="item0">
             <div class="carousel-caption">
@@ -85,7 +87,8 @@
             </div>
             <!--end carousel-inner--></div>
             <!--Begin Previous and Next buttons-->
-            <a class="left carousel-control" href="#myGallery" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myGallery" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="left carousel-control" href="#myGallery" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a> 
+            <a class="right carousel-control" href="#myGallery" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span></a>
             <!--end carousel--></div>
 
         <!--end modal-body--></div>
@@ -96,7 +99,7 @@
         <!--end modal-footer--></div>
         <!--end modal-content--></div>
         <!--end modal-dialoge--></div>
-        <!--end myModal-->></div>
+        <!--end myModal--></div>
 
 
 
@@ -108,7 +111,7 @@
     <section class="services-section">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#myModal">
+                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#galleryModal">
                 <a href="#myGallery" data-slide-to="0">
                     <div class="single-services-item">
                         <div class="services-pic-item">
@@ -120,7 +123,7 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#myModal">
+                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#galleryModal">
                 <a href="#myGallery" data-slide-to="1">
                     <div class="single-services-item">
                         <div class="services-pic-item">
@@ -132,7 +135,7 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#myModal">
+                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#galleryModal">
                 <a href="#myGallery" data-slide-to="2">
                     <div class="single-services-item">
                         <div class="services-pic-item">
@@ -144,7 +147,7 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#myModal">
+                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#galleryModal">
                 <a href="#myGallery" data-slide-to="3">
                     <div class="single-services-item">
                         <div class="services-pic-item">
@@ -156,7 +159,7 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#myModal">
+                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#galleryModal">
                 <a href="#myGallery" data-slide-to="4">
                     <div class="single-services-item changed-align">
                         <div class="services-pic-item">
@@ -168,7 +171,7 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#myModal">
+                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#galleryModal">
                 <a href="#myGallery" data-slide-to="5">
                     <div class="single-services-item changed-align">
                         <div class="services-pic-item">
@@ -180,7 +183,7 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#myModal">
+                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#galleryModal">
                 <a href="#myGallery" data-slide-to="6">
                     <div class="single-services-item">
                         <div class="services-pic-item">
@@ -192,7 +195,7 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#myModal">
+                <div class="col-lg-3 col-sm-6 works-item filter-web" data-toggle="modal" data-target="#galleryModal">
                 <a href="#myGallery" data-slide-to="7">
                     <div class="single-services-item">
                         <div class="services-pic-item">
