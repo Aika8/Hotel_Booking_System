@@ -18,11 +18,10 @@
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    
     <link href="css/pe-icon-7-stroke.css" rel="stylesheet" />
 
     <link href='css/rotating-card.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

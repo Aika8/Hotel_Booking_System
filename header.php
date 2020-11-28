@@ -268,7 +268,7 @@ if(isset($_POST['roomButton'])){
                 </div>
               </div>
 
-              <script type="text/javascript">
+              <!-- <script type="text/javascript">
                   $().ready(function(){
                       $('[rel="tooltip"]').tooltip();
 
@@ -293,7 +293,7 @@ if(isset($_POST['roomButton'])){
                   }
 
 
-              </script>
+              </script> -->
 
 
             <?php endif;?>

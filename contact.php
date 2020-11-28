@@ -7,6 +7,72 @@
 <body>
 <?php include_once('header.php'); ?>
 
+
+<?php
+if(isset($_POST['feedback'])){
+
+    if(isset($_SESSION['user'])){
+
+        echo $_POST['full_name'];
+        echo $_POST['phone'];
+        echo $_POST['message'];
+        echo $_POST['email'];
+
+        $full_name = $_POST['full_name'];
+        $mobile = $_POST['phone'];
+        $message= $_POST['message'];
+        $email = $_POST['email'];
+        $guest_id = $_SESSION['userId'];
+
+        $sql = mysqli_query($con,"insert into feedback values('','$full_name','$mobile', '$message', '$email', '$guest_id' )");
+        if($sql){
+            $modal_message = "Thank you! Your message successfully send";
+        $show_modal = true;
+        }
+
+    }else{
+        $modal_message = "You need to log in to send a feedback!";
+            $show_modal = true;
+    }
+   
+
+
+}
+
+
+
+?>
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="secondModal" style="background-color: ">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p><?php echo $modal_message?></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<?php if($show_modal):?>
+          <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery("#secondModal").modal("show");
+        });
+        </script>
+<?php endif;?>
+
     <!-- Hero Section Begin -->
     <section class="hero-section set-bg" data-setbg="img/contact-bg.jpg">
         <div class="hero-text">
@@ -54,24 +120,24 @@
                 <div class="col-lg-6">
                     <div class="contact-form">
                         <h5>Write us...</h5>
-                        <form action="#">
+                         <form action="" method="post">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <p>From</p>
                                     <div class="input-group">
-                                        <input type="text" placeholder="Full Name">
+                                        <input type="text" placeholder="Full Name" name="full_name" required>
                                         <img src="img/edit.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-group">
-                                        <input type="email" placeholder="Email">
+                                        <input type="email" placeholder="Email" name="email" required>
                                         <img src="img/envelop-copy.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-group phone-num">
-                                        <input type="text" placeholder="Phone">
+                                        <input type="text" placeholder="Phone" name="phone" required>
                                         <img src="img/phone-copy.png" alt="">
                                     </div>
                                 </div>
@@ -79,13 +145,13 @@
                                     <div class="message">
                                         <p>Message</p>
                                         <div class="textarea">
-                                            <textarea placeholder="Hi ..."></textarea>
+                                            <textarea placeholder="Hi ..." name="message" required></textarea>
                                             <img src="img/speech-copy.png" alt="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <button type="submit">Send <i class="lnr lnr-arrow-right"></i></button>
+                                    <button type="submit" name="feedback">Send <i class="lnr lnr-arrow-right"></i></button>
                                 </div>
                             </div>
                         </form>
