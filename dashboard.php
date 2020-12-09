@@ -31,7 +31,6 @@
                         <div class="col-xl-12">
                             <nav class="main-menu mobile-menu float-right">
                                 <ul>
-                                    <li><a href="">Profile</a></li>
                                     <li><a href="index.php">Logout</a></li>
                                 </ul>
                             </nav>

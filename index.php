@@ -61,7 +61,7 @@
                                 <h2>Wellness Center</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipis-cing elit. Mauris tincidunt consectetur
                                     turpis, eget consequat.</p>
-                                <a href="#" class="primary-btn fac-btn">Visit Center <i class="lnr lnr-arrow-right"></i></a>
+                                
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                 <h2>Wellness Center</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipis-cing elit. Mauris tincidunt consectetur
                                     turpis, eget consequat.</p>
-                                <a href="#" class="primary-btn fac-btn">Visit Center <i class="lnr lnr-arrow-right"></i></a>
+                                
                             </div>
                         </div>
                     </div>

@@ -51,38 +51,32 @@
             <div class="carousel-inner">
             <div class="item active"> <img src="img/services/services-1.jpg" alt="item0">
             <div class="carousel-caption">
-            <h3>Heading 3</h3>
-            <p>Slide 0  description.</p>
+            
             </div>
             </div>
             <div class="item"> <img src="img/services/services-2.jpg" alt="item1">
             <div class="carousel-caption">
-            <h3>Heading 3</h3>
-            <p>Slide 1 description.</p>
+            
             </div>
             </div>
             <div class="item"> <img src="img/services/services-3.jpg" alt="item2">
             <div class="carousel-caption">
-            <h3>Heading 3</h3>
-            <p>Slide 2  description.</p>
+            
             </div>
             </div>
             <div class="item"> <img src="img/services/services-4.jpg" alt="item3">
             <div class="carousel-caption">
-            <h3>Heading 3</h3>
-            <p>Slide 3 description.</p>
+            
             </div>
             </div>
             <div class="item"> <img src="img/services/services-5.jpg" alt="item4">
             <div class="carousel-caption">
-            <h3>Heading 3</h3>
-            <p>Slide 4 description.</p>
+            
             </div>
             </div>
             <div class="item"> <img src="img/services/services-6.jpg" alt="item5">
             <div class="carousel-caption">
-            <h3>Heading 3</h3>
-            <p>Slide 5 description.</p>
+            
             </div>
             </div>
             <!--end carousel-inner--></div>

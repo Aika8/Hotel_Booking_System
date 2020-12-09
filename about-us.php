@@ -133,7 +133,7 @@
                         <div class="staff-text">
                             <h5>Sarah Doe</h5>
                             <span>Hotel Manager</span>
-                            <a href="#"><i class="lnr lnr-arrow-right"></i></a>
+                            
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                         <div class="staff-text">
                             <h5>Jessica Doe</h5>
                             <span>Reception Manager</span>
-                            <a href="#"><i class="lnr lnr-arrow-right"></i></a>
+                            
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                         <div class="staff-text">
                             <h5>Jessica Doe</h5>
                             <span>It</span>
-                            <a href="#"><i class="lnr lnr-arrow-right"></i></a>
+                            
                         </div>
                     </div>
                 </div>

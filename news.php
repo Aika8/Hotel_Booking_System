@@ -32,21 +32,6 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 order-2 order-lg-1">
                     <div class="side-bar">
-                        <div class="categories-item">
-                            <h4>Categories</h4>
-                            <div class="categories-list">
-                                <ul>
-                                    <li>Accommodation <span>1</span></li>
-                                    <li>Nearby <span>3</span></li>
-                                    <li>Holidays <span>4</span></li>
-                                    <li>Events <span>2</span></li>
-                                    <li>News <span>3</span></li>
-                                    <li>Restaurant <span>1</span></li>
-                                    <li>Wellness Treatments <span>2</span></li>
-                                    <li>Uncategorized <span>4</span></li>
-                                </ul>
-                            </div>
-                        </div>
                         <div class="recent-post">
                             <h4>Recent Posts</h4>
                             <div class="single-recent-post">
@@ -118,7 +103,7 @@
                                     bibendum eget sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna fermentum
                                     ornare. Morbi vel ultrices leo. Sed eu turpis eu arcu vehicula fringilla ut vitae
                                     orci. ...</p>
-                                <a href="#">Continue Reading <i class="lnr lnr-arrow-right"></i></a>
+                               
                             </div>
                         </div>
                         <div class="single-blog-post">
@@ -149,7 +134,7 @@
                                     bibendum eget sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna fermentum
                                     ornare. Morbi vel ultrices leo. Sed eu turpis eu arcu vehicula fringilla ut vitae
                                     orci. ...</p>
-                                <a href="#">Continue Reading <i class="lnr lnr-arrow-right"></i></a>
+                                
                             </div>
                         </div>
                         <div class="single-blog-post">
@@ -180,7 +165,7 @@
                                     bibendum eget sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna fermentum
                                     ornare. Morbi vel ultrices leo. Sed eu turpis eu arcu vehicula fringilla ut vitae
                                     orci. ...</p>
-                                <a href="#">Continue Reading <i class="lnr lnr-arrow-right"></i></a>
+                                
                             </div>
                         </div>
                     </div>
