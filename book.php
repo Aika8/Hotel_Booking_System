@@ -25,7 +25,6 @@ if(!isset($_SESSION['userId'])){
 
 if(isset($_POST['availability'])){
 
-   
 
     if(isset($_POST['inDate']) and isset($_POST['outDate'])  ){
    
@@ -34,17 +33,12 @@ if(isset($_POST['availability'])){
         $people_id = $_POST['people'];
         $type_id = $_POST['type'];
 
-        
-     
-
 
         if($inDate > $outDate or $inDate < date('Y-m-d')){
             $modal_message = "Invalid input!";
             $show_modal = true;
         }
         else{
-
-
         $flag = false;   
         $sql=mysqli_query($con,"select * from room where room_type_id ='$type_id' and dimension_id = '$people_id'");
         while($res=mysqli_fetch_assoc($sql)){
@@ -71,7 +65,7 @@ if(isset($_POST['availability'])){
             $show_modal = true;
         }
 
-        }
+    }
 }
 else{
     echo $modal_message;

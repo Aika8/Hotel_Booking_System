@@ -33,7 +33,7 @@ if(isset($_POST['registerButton'])){
         $query = "SELECT * FROM guest WHERE email = '$email'";
         $search_result =  mysqli_query($con, $query);
         $row = mysqli_fetch_array($search_result);
-        $_SESSION['user'] = $row;
+        $_SESSION['user'] = serialize($row);
         $_SESSION['userId'] = $row['id'];
         header('Location: '.$_SERVER['PHP_SELF']);
         die;
