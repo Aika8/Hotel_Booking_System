@@ -5,7 +5,7 @@ $db_login = getenv('CLEARDB_DATABASE_LOGIN');
 $db_pass = getenv('CLEARDB_DATABASE_PASS');
 $db_host = getenv('CLEARDB_DATABASE_HOSTNAME');
 $db_db = getenv('CLEARDB_DATABASE_DB');
-$con=mysqli_connect($db_host, $db_login, $db_pass, $db_db);
+$con=mysqli_connect($db_url);
 
 
 ?>
