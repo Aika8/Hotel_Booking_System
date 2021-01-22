@@ -6,5 +6,5 @@ In the first part of this report, I will tell you what the use of my project is 
 
 
 ## Demo version here:
-https://git.heroku.com/iitu-hotel-booking-project.git
+https://iitu-hotel-booking-project.herokuapp.com/
 
